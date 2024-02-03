@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom In and Out</title>
+    <style>
+    .box{
+        width: 400px;
+        margin: 10px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .box img{
+        width: 100%;
+        height: auto;
+        transition: all;
+        transition-duration: 500ms;
+    }
+    .box:hover img{
+        transform: scale(0);
+    }
+    .content{
+        position:absolute;
+        background-color: rgba(0, 0, 0, 0.246);
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+        transition: all;
+        transition-duration: 500ms;
+    }
+    .box:hover .content{
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+        transition-delay: 200ms;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://picsum.photos/id/85/1500/1300" alt="image">
+        <div class="content">
+            <h1>Farm</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia.</p>
+        </div>
+
+    </div>
+</body>
+</html>
